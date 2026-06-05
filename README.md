@@ -9,6 +9,12 @@
 - 로컬 repo 초기 생성
 - Vite 기반 정적 사이트 scaffold
 - 올치랩 홈 설계안과 브랜드 컬러 토큰 반영
+- GitHub Pages 임시 배포 연결
+
+## 공개 확인 주소
+
+- 홈: <https://olchi-mark.github.io/olchilab-web/>
+- 노션 임베드용 홍보 운영판: <https://olchi-mark.github.io/olchilab-web/notion-dashboard-embed/>
 
 ## 실행
 
@@ -33,11 +39,22 @@ npm run dev
 
 ```bash
 npm run build
+npm run build:github-pages
 npm run build:vercel
 npm run build:mintlify
 npm run build:sentry
 npm run build:stripe
 ```
+
+## 홍보 운영판 스냅샷 갱신
+
+Notion 원본 DB를 읽어 노션 임베드용 JSON을 갱신한다.
+
+```bash
+npm run snapshot:promotion
+```
+
+실제 Notion data source ID는 `promotion-dashboard.config.local.json`에 둔다. 이 파일은 커밋하지 않는다.
 
 ## 기준 문서
 
