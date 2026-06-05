@@ -1,0 +1,13 @@
+node_modules/
+dist/
+dist-mintlify/
+dist-sentry/
+dist-stripe/
+dist-vercel/
+.env
+.env.*
+!.env.example
+promotion-dashboard.config.local.json
+.DS_Store
+Thumbs.db
+*.log

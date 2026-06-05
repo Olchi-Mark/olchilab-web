@@ -1,0 +1,10 @@
+{
+  "dataSources": {
+    "projects": "PROJECT_DATA_SOURCE_ID",
+    "contents": "CONTENTS_DATA_SOURCE_ID",
+    "budget": "BUDGET_DATA_SOURCE_ID",
+    "reports": "REPORTS_DATA_SOURCE_ID",
+    "checks": "CHECK_LIST_DATA_SOURCE_ID",
+    "ideas": "IDEA_DATA_SOURCE_ID"
+  }
+}

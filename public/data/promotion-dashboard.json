@@ -1,0 +1,229 @@
+{
+  "version": 1,
+  "generatedAt": "2026-06-05T08:52:39.762Z",
+  "source": {
+    "type": "notion-readonly-snapshot",
+    "page": "올치클래스 홍보 프로젝트 관리판 v1",
+    "rowCounts": {
+      "projects": 2,
+      "contents": 3,
+      "budget": 2,
+      "reports": 1,
+      "checks": 2,
+      "ideas": 2
+    }
+  },
+  "header": {
+    "kicker": "OlchiClass · promotion operations",
+    "title": "올치클래스 홍보 운영판",
+    "statusLabel": "Notion snapshot",
+    "periodLabel": "2026-06-05"
+  },
+  "metrics": [
+    {
+      "label": "진행 캠페인",
+      "value": "2",
+      "detail": "MBL 강의 기관 제안 · AI 기초특강 모집"
+    },
+    {
+      "label": "콘텐츠",
+      "value": "3",
+      "detail": "검토 · 초안 · 제작 중"
+    },
+    {
+      "label": "예산 집행",
+      "value": "43%",
+      "detail": "300,000 / 700,000원"
+    },
+    {
+      "label": "문의 목표",
+      "value": "0 / 20",
+      "detail": "이번 달 목표 대비"
+    }
+  ],
+  "campaigns": [
+    {
+      "id": "376ea3fc-723e-810d-8496-e5473d3945a3",
+      "title": "MBL 강의 기관 제안",
+      "status": "준비",
+      "priority": "중간",
+      "channels": [
+        "기관 제안",
+        "오프라인"
+      ],
+      "description": "학교와 기관 파트너에게 올치클래스 MBL 강의 준비 상황을 제안한다.",
+      "memo": "올치랩은 사업체, 올치클래스는 교육 브랜드 표기 유지.",
+      "startDate": "2026-06-05",
+      "dueDate": "2026-06-30",
+      "contentCount": 1,
+      "checkCount": 1,
+      "budgetTotal": 100000,
+      "inquiryTotal": 0,
+      "tone": "teal"
+    },
+    {
+      "id": "376ea3fc-723e-8167-83ea-f8d405c6bead",
+      "title": "AI 기초특강 모집",
+      "status": "진행 중",
+      "priority": "높음",
+      "channels": [
+        "블로그",
+        "인스타그램",
+        "뉴스레터"
+      ],
+      "description": "AI를 처음 배우는 사람에게 올치클래스 AI 강의 방향을 알린다.",
+      "memo": "언어의 한계, 개념어, 맥락 자산 메시지를 핵심으로 둔다.",
+      "startDate": "2026-06-05",
+      "dueDate": "2026-06-20",
+      "contentCount": 2,
+      "checkCount": 1,
+      "budgetTotal": 200000,
+      "inquiryTotal": 0,
+      "tone": "lime"
+    }
+  ],
+  "contents": [
+    {
+      "id": "376ea3fc-723e-81c6-bfbf-f1ad923c7995",
+      "title": "MBL 강의 기관 제안 요약",
+      "status": "검토",
+      "channel": "오프라인",
+      "type": "제안서",
+      "date": "2026-06-14",
+      "cta": "학교/기관 상담",
+      "link": ""
+    },
+    {
+      "id": "376ea3fc-723e-8148-b71a-cfcc2bc9ae7c",
+      "title": "AI 활용 전후 비교 카드뉴스",
+      "status": "초안",
+      "channel": "인스타그램",
+      "type": "카드뉴스",
+      "date": "2026-06-12",
+      "cta": "AI 기초특강 관심 등록",
+      "link": ""
+    },
+    {
+      "id": "376ea3fc-723e-812e-9981-f9c770e1815a",
+      "title": "AI 기초특강 모집 상세페이지",
+      "status": "제작 중",
+      "channel": "노션",
+      "type": "상세페이지",
+      "date": "2026-06-10",
+      "cta": "신청 문의로 연결",
+      "link": ""
+    }
+  ],
+  "week": [
+    {
+      "date": "2026-06-07",
+      "day": "월",
+      "label": "6/8",
+      "title": "비어 있음",
+      "status": "",
+      "channel": "",
+      "tone": "draft"
+    },
+    {
+      "date": "2026-06-08",
+      "day": "화",
+      "label": "6/9",
+      "title": "비어 있음",
+      "status": "",
+      "channel": "",
+      "tone": "teal"
+    },
+    {
+      "date": "2026-06-09",
+      "day": "수",
+      "label": "6/10",
+      "title": "AI 기초특강 모집 상세페이지",
+      "status": "제작 중",
+      "channel": "노션",
+      "tone": "progress"
+    },
+    {
+      "date": "2026-06-10",
+      "day": "목",
+      "label": "6/11",
+      "title": "비어 있음",
+      "status": "",
+      "channel": "",
+      "tone": "teal"
+    },
+    {
+      "date": "2026-06-11",
+      "day": "금",
+      "label": "6/12",
+      "title": "AI 활용 전후 비교 카드뉴스",
+      "status": "초안",
+      "channel": "인스타그램",
+      "tone": "draft"
+    },
+    {
+      "date": "2026-06-12",
+      "day": "토",
+      "label": "6/13",
+      "title": "비어 있음",
+      "status": "",
+      "channel": "",
+      "tone": "sat"
+    },
+    {
+      "date": "2026-06-13",
+      "day": "일",
+      "label": "6/14",
+      "title": "MBL 강의 기관 제안 요약",
+      "status": "검토",
+      "channel": "오프라인",
+      "tone": "sun"
+    }
+  ],
+  "checks": [
+    {
+      "id": "376ea3fc-723e-81a3-a7d6-f54411dd75d5",
+      "title": "기관 제안용 MBL 사례 정리",
+      "done": false,
+      "status": "예정",
+      "dueDate": "2026-06-12",
+      "memo": "올치클래스 기준으로 표기"
+    },
+    {
+      "id": "376ea3fc-723e-816d-a10e-d6ec4b9658af",
+      "title": "상세페이지 핵심 문구 확정",
+      "done": false,
+      "status": "진행 중",
+      "dueDate": "2026-06-09",
+      "memo": "언어의 한계/맥락 자산 메시지 반영"
+    }
+  ],
+  "budget": {
+    "spent": 300000,
+    "total": 700000,
+    "remaining": 400000,
+    "percent": 43,
+    "items": [
+      {
+        "title": "활동지 샘플 인쇄",
+        "amount": 100000,
+        "status": "예정",
+        "date": "2026-06-13",
+        "category": "인쇄"
+      },
+      {
+        "title": "모집 광고 테스트",
+        "amount": 200000,
+        "status": "예정",
+        "date": "2026-06-11",
+        "category": "광고"
+      }
+    ]
+  },
+  "reports": {
+    "inquiries": 0,
+    "inquiryTarget": 20,
+    "views": 0,
+    "conversions": 0,
+    "completionRate": 0
+  }
+}
