@@ -1,5 +1,8 @@
 import "./styles.css";
 
+const siteBasePath = import.meta.env.BASE_URL || "/";
+const routeHref = (path = "") => `${siteBasePath}${path}`.replace(/\/{2,}/g, "/");
+
 const homePage = `
   <header class="site-header">
     <div class="nav-shell">
@@ -7,161 +10,230 @@ const homePage = `
         <span class="brand-mark">olchi</span><span class="brand-lab">lab</span>
       </a>
       <nav class="nav-links" aria-label="Main navigation">
-        <a href="#about">소개</a>
+        <a href="#about">올치랩 소개</a>
+        <a href="#work">하는 일</a>
         <a href="#class">올치클래스</a>
-        <a href="#projects">프로젝트</a>
-        <a href="#journal">기록</a>
+        <a href="#collaboration">협업 방식</a>
+        <a href="${routeHref("company-board/")}">사내게시판</a>
         <a href="#contact">문의</a>
       </nav>
-      <a class="nav-cta" href="#contact">수업/협업 문의</a>
+      <a class="nav-cta" href="#contact">학교·기관 협업 문의</a>
     </div>
   </header>
 
-  <main id="top">
-    <section class="hero">
-      <div class="hero-copy">
-        <p class="eyebrow">OlchiLab · 옳게 보고, 꼼꼼하게 맞춘다</p>
-        <h1>필요한 것을 먼저 알아차리고,<br />실행 가능한 형태로 정리합니다.</h1>
-        <p class="hero-lead">
-          올치랩은 교육, 실험수업, AI 활용, 자료 정리, 자동화 흐름을 고객의
-          상황에 맞게 구조화하는 실무형 파트너입니다. 올치클래스를 통해 MBL
-          실험수업과 AI 기초특강을 준비하고, 여러 실험 프로젝트를 작게 만들고
-          검증합니다.
+  <main id="top" class="home-v3">
+    <section class="home-hero">
+      <div class="home-hero__copy">
+        <p class="eyebrow">OlchiLab · company and operations hub</p>
+        <h1>학교·기관 협업을 위한 교육과 실무 정리</h1>
+        <p class="home-hero__lead">
+          올치랩은 학교·기관과 협업해 교육 운영과 실무를 정리하는 소규모 사업체입니다.
+          교육은 하위 브랜드 올치클래스에서 MBL 수업과 AI 기초특강으로 운영합니다.
         </p>
         <div class="cta-row">
-          <a class="button primary" href="#contact">수업/협업 문의</a>
+          <a class="button primary" href="#contact">학교·기관 협업 문의하기</a>
           <a class="button secondary" href="#class">올치클래스 보기</a>
         </div>
       </div>
 
-      <div class="hero-art" aria-label="OlchiLab operating system preview">
-        <div class="board-header">
-          <span>작업 흐름</span>
-          <strong>고객 요청 → 실행 구조</strong>
+      <aside class="home-hero__panel" aria-label="올치랩과 올치클래스 관계 요약">
+        <div class="relationship-card">
+          <span>상위 운영 주체</span>
+          <strong>올치랩</strong>
+          <p>교육 운영, 기관 대응, 자료 정리, 실행 구조화, 자동화 가능성 검토</p>
         </div>
-        <div class="board-grid">
-          <article class="wide">
-            <span>01</span>
-            <strong>요구 파악</strong>
-            <p>말한 요구와 숨은 조건을 함께 봅니다.</p>
-          </article>
-          <article>
-            <span>02</span>
-            <strong>구조화</strong>
-            <p>목적, 대상, 일정, 자료를 나눕니다.</p>
-          </article>
-          <article>
-            <span>03</span>
-            <strong>준비</strong>
-            <p>수업, 문서, 자동화 흐름을 만듭니다.</p>
-          </article>
-          <article class="wide muted-card">
-            <span>04</span>
-            <strong>실행하고 다시 쓸 수 있게 남깁니다.</strong>
-            <p>현장에서 쓰고, 다음 작업에 재사용되는 기준으로 정리합니다.</p>
-          </article>
+        <div class="relationship-arrow" aria-hidden="true">↓</div>
+        <div class="relationship-card subbrand">
+          <span>하위 교육 브랜드</span>
+          <strong>올치클래스</strong>
+          <p>MBL 수업과 AI 기초특강을 학교와 기관 조건에 맞게 준비</p>
         </div>
-      </div>
+        <div class="home-note">
+          <strong>첫 상담에서 정리할 것</strong>
+          <ul>
+            <li>대상과 목적</li>
+            <li>일정과 운영 조건</li>
+            <li>자료와 준비물</li>
+            <li>문의 이후 다음 행동</li>
+          </ul>
+        </div>
+      </aside>
     </section>
 
-    <section id="about" class="signature-band">
-      <div class="signature-card">
-        <div>
-          <p class="eyebrow on-dark">What we organize</p>
-          <h2>막연한 요청을 작고 실행 가능한 단위로 나눕니다.</h2>
-        </div>
+    <section id="about" class="home-band home-band--navy">
+      <div class="home-band__inner">
+        <p class="eyebrow on-dark">About OlchiLab</p>
+        <h2>올치랩은 단순 강의 브랜드가 아닙니다.</h2>
         <p>
-          고객이 원하는 결과를 만들려면 먼저 목적, 조건, 자료, 일정, 준비물,
-          실행 흐름이 정리되어야 합니다. 올치랩은 그 과정을 대신 흐릿하게 넘기지
-          않고, 현장에서 바로 쓸 수 있는 구조로 바꿉니다.
+          교육 운영, 기관 대응, 자료 정리, 실행 구조화까지 함께 다루는 사업 운영 주체입니다.
+          수업 상세는 올치클래스에서 안내하고, 올치랩 홈은 협업 범위와 신뢰 정보를 먼저 설명합니다.
         </p>
       </div>
     </section>
 
-    <section id="class" class="section split-section">
-      <div class="section-copy">
-        <p class="eyebrow">Main brand</p>
-        <h2>올치클래스는 올치랩의 교육 브랜드입니다.</h2>
+    <section id="work" class="home-section">
+      <div class="home-section__head">
+        <p class="eyebrow">What OlchiLab organizes</p>
+        <h2>먼저 정리해야 실행이 분명해집니다.</h2>
         <p>
-          MBL 실험수업과 AI 기초특강을 준비하는 교육 브랜드입니다. 학교, 교사,
-          수강생의 조건을 읽고 실제 수업에 필요한 자료와 운영 흐름까지 함께
-          설계합니다.
+          요청을 바로 상품처럼 포장하기보다, 목적과 조건을 나누고 실제 운영 가능한 단위로 정리합니다.
         </p>
       </div>
-      <div class="feature-stack">
-        <article class="feature-card emphasis">
-          <span class="status active">우선 준비</span>
-          <h3>학교 맞춤 MBL 실험수업</h3>
-          <p>학교, 교사, 교육기관을 대상으로 장비와 수업 조건에 맞는 실험수업을 준비합니다.</p>
+      <div class="work-grid">
+        <article>
+          <span>01</span>
+          <h3>교육 운영 준비</h3>
+          <p>대상, 시간, 공간, 준비물, 수업 흐름을 확인해 실제 진행 가능한 형태로 정리합니다.</p>
         </article>
-        <article class="feature-card">
-          <span class="status planning">방향 정리</span>
+        <article>
+          <span>02</span>
+          <h3>기관 대응과 실무 정리</h3>
+          <p>학교·기관과 협의할 때 필요한 일정, 자료, 안내 문구, 의사결정 항목을 나눕니다.</p>
+        </article>
+        <article>
+          <span>03</span>
+          <h3>자료 구조화와 자동화 검토</h3>
+          <p>반복되는 문서와 작업 흐름을 다시 쓸 수 있게 정리하고, 자동화 가능성을 검토합니다.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="class" class="home-section class-entry">
+      <div class="class-entry__copy">
+        <p class="eyebrow">Education brand</p>
+        <h2>수업 상세는 올치클래스에서 안내합니다.</h2>
+        <p>
+          올치클래스는 올치랩이 운영하는 교육 브랜드입니다. 홈에서는 교육 브랜드의 위치만 짧게 소개하고,
+          상세 커리큘럼과 운영 방식은 올치클래스 페이지에서 분리해 다룹니다.
+        </p>
+      </div>
+      <div class="program-cards">
+        <article>
+          <span class="status active">올치클래스</span>
+          <h3>MBL 수업</h3>
+          <p>센서와 실험 조건을 고려해 학교·기관 상황에 맞게 준비하는 실험 수업입니다.</p>
+        </article>
+        <article>
+          <span class="status planning">올치클래스</span>
           <h3>AI 기초특강</h3>
-          <p>비전문가가 AI를 실제 작업에 쓰도록 언어화, 개념어, 검증 습관을 다룹니다.</p>
-        </article>
-        <article class="feature-card">
-          <span class="status idea">확장 후보</span>
-          <h3>교사 연수 / 수업자료</h3>
-          <p>교사 연수, 활동지, 수업자료 운영체계로 확장 가능한 교육 라인입니다.</p>
+          <p>비전문가가 AI를 실제 작업에 활용하도록 언어화, 개념어, 검증 습관을 다룹니다.</p>
         </article>
       </div>
     </section>
 
-    <section id="projects" class="section project-section">
-      <div class="section-heading">
-        <p class="eyebrow">Projects</p>
-        <h2>올치랩 아래에서 작게 실험하는 프로젝트들</h2>
+    <section id="collaboration" class="home-section collaboration">
+      <div class="home-section__head">
+        <p class="eyebrow">Collaboration</p>
+        <h2>역할별 페이지보다, 협업 흐름을 먼저 보여줍니다.</h2>
         <p>
-          아이디어는 바로 사업이 되지 않습니다. 올치랩은 작게 만들고, 기록하고,
-          검토하며 가능성이 있는 프로젝트만 다음 단계로 옮깁니다.
+          학교, 기관, 교사, 학부모, 학생을 메뉴에서 먼저 나누지 않습니다. 같은 방문자가 여러 역할을 가질 수 있기 때문에, 협업 흐름 안에서 필요한 정보를 안내합니다.
         </p>
       </div>
-      <div class="project-list" aria-label="OlchiLab project list">
-        ${[
-          ["올치클래스", "MBL·AI 강의 교육 브랜드", "우선 준비"],
-          ["올치픽", "AI 사진 정리 비서 아이디어", "실험"],
-          ["올치보드", "AI 전자종이 생활 보드 아이디어", "아이디어"],
-          ["올치손", "고령자 생활 연결 서비스 아이디어", "아이디어"],
-          ["올치마크", "도장형 마크 기반 패션/굿즈 브랜드", "아이디어"],
-          ["Olchi Wrap", "건강식 랩·밀프렙 브랜드 아이디어", "아이디어"],
-        ]
-          .map(
-            ([name, desc, status]) => `
-              <article class="project-row">
-                <strong>${name}</strong>
-                <span>${desc}</span>
-                <em>${status}</em>
-              </article>
-            `
-          )
-          .join("")}
+      <div class="flow-list">
+        <article>
+          <span>1</span>
+          <strong>문의와 상황 확인</strong>
+          <p>대상, 목적, 일정, 장소, 예산, 필요한 자료를 먼저 확인합니다.</p>
+        </article>
+        <article>
+          <span>2</span>
+          <strong>진행 방식 정리</strong>
+          <p>출강, 특강, 자료 준비, 운영 협의 중 어떤 방식이 맞는지 나눕니다.</p>
+        </article>
+        <article>
+          <span>3</span>
+          <strong>준비 항목 확정</strong>
+          <p>수업 흐름, 안내 문구, 준비물, 담당자 확인 사항을 실행 단위로 정리합니다.</p>
+        </article>
+        <article>
+          <span>4</span>
+          <strong>실행 후 기록</strong>
+          <p>다음 협업에 다시 쓸 수 있도록 자료와 판단 기준을 남깁니다.</p>
+        </article>
       </div>
     </section>
 
-    <section id="journal" class="section work-section">
-      <div class="section-heading centered">
-        <p class="eyebrow">How we work</p>
-        <h2>듣고, 나누고, 준비하고, 실행하고, 다시 쓸 수 있게 남깁니다.</h2>
-      </div>
-      <div class="steps">
-        ${["듣기", "구조화", "준비", "실행", "기록과 개선"]
-          .map((step, index) => `<article><span>${index + 1}</span><strong>${step}</strong></article>`)
-          .join("")}
+    <section id="trust" class="home-section trust-section">
+      <div class="trust-grid">
+        <div>
+          <p class="eyebrow">Trust information</p>
+          <h2>첫 버전에서는 정직한 기본 정보가 신뢰입니다.</h2>
+          <p>
+            아직 후기, 가격표, 상세 커리큘럼을 과장해서 채우지 않습니다. 대신 누가 운영하고, 어떻게 연락하며, 어떤 범위에서 협의할 수 있는지 분명하게 보여줍니다.
+          </p>
+        </div>
+        <div class="trust-list">
+          <article>
+            <strong>현재 상태</strong>
+            <span>후기 준비 중 · 상세 커리큘럼 협의형 · 가격은 문의 후 안내</span>
+          </article>
+          <article>
+            <strong>문의 기준</strong>
+            <span>학생 직접 문의보다 교사·기관·보호자 중심 문의 구조를 우선합니다.</span>
+          </article>
+          <article>
+            <strong>필수 보강</strong>
+            <span>개인정보처리방침, 운영자 정보, 이메일과 대체 연락 수단을 준비합니다.</span>
+          </article>
+        </div>
       </div>
     </section>
 
     <section id="contact" class="contact">
       <div class="contact-card">
         <p class="eyebrow on-dark">Contact</p>
-        <h2>어떤 준비가 필요한지부터 함께 정리해보겠습니다.</h2>
+        <h2>학교·기관 협업이나 수업 준비가 필요하다면 먼저 상황을 알려주세요.</h2>
         <p>
-          무엇을 어떻게 준비해야 할지 아직 명확하지 않아도 괜찮습니다.
-          필요한 것을 먼저 정리하는 일부터 시작할 수 있습니다.
+          무엇을 어떻게 준비해야 할지 아직 명확하지 않아도 괜찮습니다. 대상, 일정, 목적, 필요한 자료를 함께 정리하는 일부터 시작할 수 있습니다.
         </p>
         <div class="cta-row center">
-          <a class="button primary light" href="mailto:hello@olchilab.com">문의하기</a>
+          <a class="button primary light" href="mailto:hello@olchilab.com">학교·기관 협업 문의하기</a>
           <a class="button secondary light" href="#class">올치클래스 먼저 보기</a>
         </div>
+      </div>
+    </section>
+
+    <footer class="site-footer" aria-label="OlchiLab footer">
+      <div>
+        <strong>OlchiLab</strong>
+        <span>올치랩 · 사업 운영 허브</span>
+      </div>
+      <nav aria-label="Footer navigation">
+        <a href="#about">올치랩 소개</a>
+        <a href="#class">올치클래스</a>
+        <a href="${routeHref("company-board/")}">사내게시판</a>
+        <a href="#contact">문의</a>
+        <a href="#trust">개인정보처리방침 준비 중</a>
+      </nav>
+    </footer>
+  </main>
+`;
+
+const companyBoardPage = `
+  <main class="company-board-page">
+    <section class="company-board-shell">
+      <header class="company-board-header">
+        <div>
+          <p class="company-board-kicker"><span></span>Olchi Teams · public board mirror</p>
+          <h1>Olchi Teams 사내게시판</h1>
+          <p>
+            내부 53240 사내게시판의 홈, 구축 상태판, 조직도 내용을 정적 스냅샷으로 노출합니다.
+            원장은 Olchi Teams repo이고, 이 화면은 공개 사이트용 읽기 전용 projection입니다.
+          </p>
+        </div>
+        <nav class="company-board-nav" aria-label="사내게시판 보기">
+          <a href="${routeHref("")}">OlchiLab 홈</a>
+          <a href="#overview">홈</a>
+          <a href="#build">구축 상태판</a>
+          <a href="#org">조직도</a>
+        </nav>
+      </header>
+
+      <div class="company-board-root" data-company-board-root>
+        <section class="company-board-loading">
+          <strong>사내게시판 스냅샷을 불러오는 중입니다.</strong>
+          <span>public/data/company-board-snapshot.json</span>
+        </section>
       </div>
     </section>
   </main>
@@ -738,22 +810,373 @@ async function loadPromotionDashboardSnapshot() {
   }
 }
 
+const formatBoardDate = (value) => {
+  if (!value) return "확인 필요";
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) return String(value);
+  return date.toLocaleString("ko-KR", {
+    dateStyle: "medium",
+    timeStyle: "short",
+  });
+};
+
+const boardNumber = (value) => Number(value || 0).toLocaleString("ko-KR");
+
+function boardStatusTone(status = "") {
+  if (status.includes("done") || status.includes("active") || status.includes("acked")) return "good";
+  if (status.includes("waiting") || status.includes("review") || status.includes("draft")) return "warn";
+  if (status.includes("blocked") || status.includes("missing")) return "bad";
+  return "neutral";
+}
+
+function boardBadge(status = "") {
+  return `<span class="company-board-badge ${boardStatusTone(status)}">${escapeHtml(status || "unknown")}</span>`;
+}
+
+function boardMetric(label, value, detail) {
+  return `
+    <article>
+      <span>${escapeHtml(label)}</span>
+      <strong>${escapeHtml(value)}</strong>
+      <em>${escapeHtml(detail)}</em>
+    </article>
+  `;
+}
+
+function renderStatusCounts(counts = {}) {
+  const entries = Object.entries(counts);
+  if (!entries.length) return `<span class="company-board-muted">기록 없음</span>`;
+
+  return entries
+    .map(
+      ([key, value]) => `
+        <span class="company-board-chip">
+          ${escapeHtml(key)}
+          <strong>${escapeHtml(value)}</strong>
+        </span>
+      `
+    )
+    .join("");
+}
+
+function renderRecentLog(logs = []) {
+  if (!logs.length) {
+    return `<li><strong>최근 로그 없음</strong><span>current-log.md 제목을 찾지 못했습니다.</span></li>`;
+  }
+
+  return logs
+    .slice(0, 6)
+    .map((item) => `<li><strong>${escapeHtml(item)}</strong><span>current-log projection</span></li>`)
+    .join("");
+}
+
+function renderComponents(components = []) {
+  if (!components.length) {
+    return `<tr><td colspan="5">표시할 구성요소가 없습니다.</td></tr>`;
+  }
+
+  return components
+    .map(
+      (component) => `
+        <tr>
+          <td>${escapeHtml(component.area)}</td>
+          <td><strong>${escapeHtml(component.name)}</strong></td>
+          <td>${boardBadge(component.status)}</td>
+          <td>${escapeHtml(component.owner)}</td>
+          <td>${escapeHtml(component.next)}</td>
+        </tr>
+      `
+    )
+    .join("");
+}
+
+function renderWorkItems(items = []) {
+  if (!items.length) {
+    return `<tr><td colspan="6">최근 작업이 없습니다.</td></tr>`;
+  }
+
+  return items
+    .map(
+      (item) => `
+        <tr>
+          <td><code>${escapeHtml(item.work_id || item.id || "-")}</code></td>
+          <td><strong>${escapeHtml(item.title || "제목 없음")}</strong></td>
+          <td>${boardBadge(item.status || item.work_status)}</td>
+          <td>${escapeHtml(item.priority || "-")}</td>
+          <td>${escapeHtml(item.assignee_seat_key || item.owner_seat_key || "-")}</td>
+          <td>${escapeHtml(item.next_action || item.expected_output || "-")}</td>
+        </tr>
+      `
+    )
+    .join("");
+}
+
+function renderInboxRows(rows = []) {
+  if (!rows.length) {
+    return `<tr><td colspan="3">교신문 inbox projection이 없습니다.</td></tr>`;
+  }
+
+  return rows
+    .map(
+      (row) => `
+        <tr>
+          <td>${escapeHtml(row.to_path)}</td>
+          <td>${boardBadge(row.ack === 1 || row.ack === true ? "acked" : "unacked")}</td>
+          <td>${escapeHtml(row.count ?? 0)}</td>
+        </tr>
+      `
+    )
+    .join("");
+}
+
+function renderWakeRows(rows = []) {
+  if (!rows.length) {
+    return `<tr><td colspan="4">wake queue projection이 없습니다.</td></tr>`;
+  }
+
+  return rows
+    .slice(0, 8)
+    .map(
+      (row) => `
+        <tr>
+          <td>${escapeHtml(row.to_key || row.to_path)}</td>
+          <td>${boardBadge(row.wake_status || "unknown")}</td>
+          <td><code>${escapeHtml(row.trigger_message_id || "-")}</code></td>
+          <td>${escapeHtml(row.updated_at || row.last_wake_at || "-")}</td>
+        </tr>
+      `
+    )
+    .join("");
+}
+
+function renderSeats(seats = []) {
+  if (!seats.length) {
+    return `<tr><td colspan="6">Seat projection이 없습니다.</td></tr>`;
+  }
+
+  return seats
+    .slice()
+    .sort((a, b) => String(a.seat_path || "").localeCompare(String(b.seat_path || ""), "ko-KR"))
+    .map(
+      (seat) => `
+        <tr>
+          <td>${escapeHtml(seat.seat_path || seat.seat_name || "-")}</td>
+          <td><strong>${escapeHtml(seat.seat_name || "-")}</strong></td>
+          <td>${escapeHtml(seat.actor_name || seat.assigned_actor_id || "미배정")}</td>
+          <td>${boardBadge(seat.seat_status || "unknown")}</td>
+          <td>${boardBadge(seat.runtime_status || "no_runtime")}</td>
+          <td><code>${escapeHtml(seat.target_thread_id || "-")}</code></td>
+        </tr>
+      `
+    )
+    .join("");
+}
+
+function applyCompanyBoardSnapshot(snapshot) {
+  const root = document.querySelector("[data-company-board-root]");
+  if (!root) return;
+
+  const metrics = snapshot.metrics || {};
+  const statusCounts = snapshot.status_counts || {};
+  const communication = snapshot.communication || {};
+  const inbox = Array.isArray(communication.inbox) ? communication.inbox : [];
+  const wakes = Array.isArray(communication.wake_queue) ? communication.wake_queue : [];
+  const components = Array.isArray(snapshot.components) ? snapshot.components : [];
+  const workItems = Array.isArray(snapshot.work_items) ? snapshot.work_items : [];
+  const seats = Array.isArray(snapshot.seats) ? snapshot.seats : [];
+
+  root.innerHTML = `
+    <section id="overview" class="company-board-metrics" aria-label="사내게시판 핵심 지표">
+      ${boardMetric("Actors", boardNumber(metrics.actors), "actor registry")}
+      ${boardMetric("Active assignments", boardNumber(metrics.active_assignments), `${boardNumber(metrics.assigned_seats)} assigned seats`)}
+      ${boardMetric("Work waiting", boardNumber(metrics.work_waiting), `${boardNumber(metrics.work_done)} done / ${boardNumber(metrics.work_items)} total`)}
+      ${boardMetric("Messages / wakes", `${boardNumber(metrics.unacked_messages)} / ${boardNumber(metrics.active_wakes)}`, "unACKed / active wake")}
+    </section>
+
+    <section class="company-board-routes" aria-label="사내게시판 라우트">
+      <a href="#overview">
+        <strong>홈</strong>
+        <span>현재 지표, 최근 로그, 운영 board projection</span>
+      </a>
+      <a href="#build">
+        <strong>구축 상태판</strong>
+        <span>WorkBoard, registry, communication 상태</span>
+      </a>
+      <a href="#org">
+        <strong>조직도</strong>
+        <span>Seat name과 actor name 중심 조직 구조</span>
+      </a>
+    </section>
+
+    <section class="company-board-two-col">
+      <article class="company-board-panel">
+        <div class="company-board-panel-head">
+          <div>
+            <h2>최근 로그</h2>
+            <p>00_start_here/current-log.md에서 읽은 최근 제목입니다.</p>
+          </div>
+          <span>${escapeHtml(formatBoardDate(snapshot.generated_at))}</span>
+        </div>
+        <ol class="company-board-log">
+          ${renderRecentLog(snapshot.recent_log)}
+        </ol>
+      </article>
+
+      <article class="company-board-panel">
+        <div class="company-board-panel-head">
+          <div>
+            <h2>상태 집계</h2>
+            <p>registry와 WorkBoard status count입니다.</p>
+          </div>
+          <span>snapshot</span>
+        </div>
+        <div class="company-board-counts">
+          <h3>Actors</h3>
+          <div>${renderStatusCounts(statusCounts.actors)}</div>
+          <h3>Seats</h3>
+          <div>${renderStatusCounts(statusCounts.seats)}</div>
+          <h3>Assignments</h3>
+          <div>${renderStatusCounts(statusCounts.assignments)}</div>
+          <h3>Work</h3>
+          <div>${renderStatusCounts(statusCounts.work)}</div>
+        </div>
+      </article>
+    </section>
+
+    <section id="build" class="company-board-panel">
+      <div class="company-board-panel-head">
+        <div>
+          <h2>구축 상태판</h2>
+          <p>내부 사내게시판의 Clean Rebuild Board 구성요소입니다.</p>
+        </div>
+        <span>${escapeHtml(components.length)} components</span>
+      </div>
+      <div class="company-board-table-wrap">
+        <table class="company-board-table">
+          <thead>
+            <tr><th>영역</th><th>이름</th><th>상태</th><th>owner</th><th>다음 기준</th></tr>
+          </thead>
+          <tbody>${renderComponents(components)}</tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="company-board-panel">
+      <div class="company-board-panel-head">
+        <div>
+          <h2>WorkBoard</h2>
+          <p>최근 작업 12건입니다. 작업 정본은 Olchi Teams WorkBoard입니다.</p>
+        </div>
+        <span>${boardNumber(metrics.work_items)} items</span>
+      </div>
+      <div class="company-board-table-wrap">
+        <table class="company-board-table">
+          <thead>
+            <tr><th>ID</th><th>작업</th><th>상태</th><th>우선순위</th><th>담당</th><th>다음 행동</th></tr>
+          </thead>
+          <tbody>${renderWorkItems(workItems)}</tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="company-board-two-col">
+      <article class="company-board-panel">
+        <div class="company-board-panel-head">
+          <div>
+            <h2>Communication</h2>
+            <p>교신문 ACK 요약입니다.</p>
+          </div>
+          <span>${boardNumber(metrics.unacked_messages)} unACKed</span>
+        </div>
+        <div class="company-board-table-wrap">
+          <table class="company-board-table">
+            <thead><tr><th>수신처</th><th>ACK</th><th>count</th></tr></thead>
+            <tbody>${renderInboxRows(inbox)}</tbody>
+          </table>
+        </div>
+      </article>
+
+      <article class="company-board-panel">
+        <div class="company-board-panel-head">
+          <div>
+            <h2>Wake Queue</h2>
+            <p>최근 wake 상태 projection입니다.</p>
+          </div>
+          <span>${boardNumber(metrics.active_wakes)} active</span>
+        </div>
+        <div class="company-board-table-wrap">
+          <table class="company-board-table">
+            <thead><tr><th>to</th><th>상태</th><th>trigger</th><th>updated</th></tr></thead>
+            <tbody>${renderWakeRows(wakes)}</tbody>
+          </table>
+        </div>
+      </article>
+    </section>
+
+    <section id="org" class="company-board-panel">
+      <div class="company-board-panel-head">
+        <div>
+          <h2>조직도</h2>
+          <p>Seat Registry, Assignment Registry, Runtime Binding을 합친 projection입니다.</p>
+        </div>
+        <span>${escapeHtml(seats.length)} seats</span>
+      </div>
+      <div class="company-board-table-wrap">
+        <table class="company-board-table">
+          <thead>
+            <tr><th>경로</th><th>seat</th><th>actor</th><th>seat status</th><th>runtime</th><th>thread</th></tr>
+          </thead>
+          <tbody>${renderSeats(seats)}</tbody>
+        </table>
+      </div>
+    </section>
+  `;
+}
+
+async function loadCompanyBoardSnapshot() {
+  try {
+    const response = await fetch(`${import.meta.env.BASE_URL}data/company-board-snapshot.json`, {
+      cache: "no-store",
+    });
+    if (!response.ok) throw new Error(`Snapshot load failed: ${response.status}`);
+    applyCompanyBoardSnapshot(await response.json());
+  } catch (error) {
+    const root = document.querySelector("[data-company-board-root]");
+    if (!root) return;
+    root.innerHTML = `
+      <section class="company-board-error">
+        <strong>사내게시판 스냅샷을 불러오지 못했습니다.</strong>
+        <span>${escapeHtml(error.message)}</span>
+      </section>
+    `;
+  }
+}
+
 const currentPath = window.location.pathname;
 const isPromotionTemplateTest = currentPath.includes("promotion-template-test");
 const isNotionDashboardEmbed = currentPath.includes("notion-dashboard-embed");
+const isCompanyBoard = currentPath.includes("company-board");
 
 document.title = isPromotionTemplateTest
   ? "OlchiLab Promotion Template Test"
   : isNotionDashboardEmbed
     ? "OlchiClass Promotion Dashboard Embed"
+  : isCompanyBoard
+    ? "Olchi Teams Company Board"
   : "OlchiLab";
 
 document.querySelector("#app").innerHTML = isPromotionTemplateTest
   ? promotionTemplateTestPage
   : isNotionDashboardEmbed
     ? notionDashboardEmbedPage
+  : isCompanyBoard
+    ? companyBoardPage
   : homePage;
 
 if (isNotionDashboardEmbed) {
   loadPromotionDashboardSnapshot();
+}
+
+if (isCompanyBoard) {
+  loadCompanyBoardSnapshot();
 }

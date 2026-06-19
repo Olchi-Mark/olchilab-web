@@ -10,6 +10,7 @@
     "dev:stripe": "vite --config vite.stripe.config.js",
     "dev:vercel": "vite --config vite.vercel.config.js",
     "snapshot:promotion": "node scripts/export-promotion-dashboard-snapshot.mjs",
+    "snapshot:company-board": "node scripts/export-company-board-snapshot.mjs",
     "build": "vite build",
     "build:github-pages": "vite build --config vite.github-pages.config.js && node scripts/prepare-spa-routes.mjs",
     "build:mintlify": "vite build --config vite.mintlify.config.js",

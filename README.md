@@ -13,8 +13,9 @@
 
 ## 공개 확인 주소
 
-- 홈: <https://olchi-mark.github.io/olchilab-web/>
-- 노션 임베드용 홍보 운영판: <https://olchi-mark.github.io/olchilab-web/notion-dashboard-embed/>
+- 홈: <https://www.olchilab.com/>
+- 사내게시판 미러: <https://www.olchilab.com/company-board/>
+- 노션 임베드용 홍보 운영판: <https://www.olchilab.com/notion-dashboard-embed/>
 
 ## 실행
 
@@ -55,6 +56,16 @@ npm run snapshot:promotion
 ```
 
 실제 Notion data source ID는 `promotion-dashboard.config.local.json`에 둔다. 이 파일은 커밋하지 않는다.
+
+## 사내게시판 스냅샷 갱신
+
+Olchi Teams 내부 53240 사내게시판 원천 파일을 읽어 공개 사이트용 JSON을 갱신한다.
+
+```bash
+npm run snapshot:company-board
+```
+
+기본 입력은 `C:\dev\olchi-teams`이며, 다른 위치를 읽을 때는 `OLCHI_TEAMS_ROOT` 환경변수로 지정한다.
 
 ## 기준 문서
 
